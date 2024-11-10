@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";  // Import motion
+import { motion } from "framer-motion"; // Import motion
 import myImage from "../assets/myImage.jpg";
 import collegeLogo from "../assets/collegeLogo.png";
 import ShuffleText from "./ShuffleText";
@@ -24,15 +24,27 @@ export default function Component() {
     return () => clearInterval(intervalId);
   }, []);
 
+  useEffect(() => {
+    // Prevent horizontal scroll globally
+    document.body.style.overflowX = "hidden";
+    return () => {
+      document.body.style.overflowX = ""; // Cleanup on unmount
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen w-full px-6 sm:px-10 lg:px-36 mt-10">
+    <div
+      className="min-h-screen w-full px-6 sm:px-10 lg:px-36 mt-10 overflow-hidden"
+      style={{ overflowX: "hidden" }}
+    >
       <motion.h1
         className="text-4xl font-bold mb-5"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <ShuffleText text="About Me" /> <span className="text-sm text-zinc-500">＜（＾－＾）＞</span>
+        <ShuffleText text="About Me" />{" "}
+        <span className="text-sm text-zinc-500">＜（＾－＾）＞</span>
       </motion.h1>
 
       <div className="flex flex-col lg:flex-row gap-10 items-center">
@@ -47,7 +59,7 @@ export default function Component() {
             <img
               src={myImage}
               alt="Background"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover max-w-full"
             />
 
             {/* Gradient Overlay */}
@@ -119,13 +131,17 @@ export default function Component() {
                 />
               </div>
               <div className="flex flex-col">
-                <h1 className="text-xl">VPM'S B.N. Bandodkar College of Science, Thane</h1>
+                <h1 className="text-xl">
+                  VPM'S B.N. Bandodkar College of Science, Thane
+                </h1>
                 <p className="text-sm text-zinc-500">
                   <ShuffleText text="Bachelor of Science in Computer Science" />
                 </p>
               </div>
               <div>
-                <p className="text-sm text-zinc-500"><ShuffleText text="2022-2025" /></p>
+                <p className="text-sm text-zinc-500">
+                  <ShuffleText text="2022-2025" />
+                </p>
               </div>
             </div>
           </motion.div>
@@ -146,11 +162,17 @@ export default function Component() {
                 />
               </div>
               <div className="flex flex-col">
-                <h1 className="text-xl">Arya Gurukul International Jr. College Of Science</h1>
-                <p className="text-sm text-zinc-500"><ShuffleText text="Higher Secondary School " /></p>
+                <h1 className="text-xl">
+                  Arya Gurukul International Jr. College Of Science
+                </h1>
+                <p className="text-sm text-zinc-500">
+                  <ShuffleText text="Higher Secondary School " />
+                </p>
               </div>
               <div>
-                <p className="text-sm text-zinc-500"><ShuffleText text="2021" /></p>
+                <p className="text-sm text-zinc-500">
+                  <ShuffleText text="2021" />
+                </p>
               </div>
             </div>
           </motion.div>
@@ -163,8 +185,11 @@ export default function Component() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
+        style={{ overflowX: "hidden" }}
       >
-        <h2 className="text-4xl font-bold mb-8 text-white"><ShuffleText text="Get in Touch" /></h2>
+        <h2 className="text-4xl font-bold mb-8 text-white">
+          <ShuffleText text="Get in Touch" />
+        </h2>
 
         <motion.div
           className="flex flex-col md:flex-row gap-6"
@@ -183,7 +208,9 @@ export default function Component() {
               <IoMailOutline className="w-8 h-8 text-zinc-100 mb-auto" />
               <div className="mt-4">
                 <div className="w-full h-px bg-zinc-600 mb-4" />
-                <p className="text-zinc-100 text-sm">patilnandan859@gmail.com</p>
+                <p className="text-zinc-100 text-sm">
+                  patilnandan859@gmail.com
+                </p>
               </div>
             </div>
           </a>
@@ -199,7 +226,9 @@ export default function Component() {
               <FaLinkedinIn className="w-8 h-8 text-zinc-100 mb-auto" />
               <div className="mt-4">
                 <div className="w-full h-px bg-zinc-500 mb-4" />
-                <p className="text-zinc-100 text-sm ">linkedin.com/in/nandan</p>
+                <p className="text-zinc-100 text-sm ">
+                  linkedin.com/in/nandan
+                </p>
               </div>
             </div>
           </a>
@@ -215,9 +244,9 @@ export default function Component() {
               <FaXTwitter className="w-8 h-8 text-zinc-100 mb-auto" />
               <div className="mt-4">
                 <div className="w-full h-px bg-zinc-500 mb-4" />
-                <p className="text-zinc-100 text-sm ">x.com/nandan_one30</p>
+                <p className="text-zinc-100 text-sm">twitter.com/@Nandan</p>
               </div>
-            </div>  
+            </div>
           </a>
         </motion.div>
       </motion.div>

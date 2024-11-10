@@ -6,6 +6,9 @@ import { PiCommandThin, PiRabbitThin } from "react-icons/pi";
 import { GoCommandPalette } from "react-icons/go";
 import ShuffleText from "./ShuffleText";
 import HighlightedText from "./HighlightedText";
+import Skills from "./Skills";
+import Projects from "./Projects";
+import Footer from "./Footer";
 
 const Home = () => {
   const textVariants = {
@@ -29,14 +32,16 @@ const Home = () => {
         </div>
         <div className="flex items-center gap-5 text-white">
           <motion.a
-            href="/"
+            href="https://github.com/nandangitdesk"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative w-max hover:text-zinc-300"
             initial="hidden"
             animate="visible"
             variants={textVariants}
             transition={{ delay: 0.2 }}
           >
-            <span>work</span>
+            <span>Github</span>
             <span className="absolute -bottom-1 left-0 w-0 transition-all h-[0.060rem] bg-white group-hover:w-full"></span>
           </motion.a>
           <motion.a
@@ -139,6 +144,39 @@ const Home = () => {
         </motion.div>
       </div>
 
+      {/* Skills Section */}
+      <div className="w-full mt-24">
+        <Skills/>
+      </div>
+
+    {/* Projects Section */}
+<div className="w-full mt-24 pb-20">
+  <motion.h1 
+    className="text-3xl sm:text-4xl font-bold text-white text-center"
+    initial={{ opacity: 0, y: -20 }} 
+    animate={{ opacity: 1, y: 0 }} 
+    transition={{ duration: 1 }}
+  >
+    <ShuffleText text="Check out my latest" />
+    &nbsp;<HighlightedText text="Work" />
+  </motion.h1>
+
+  <motion.h2 
+    className="text-medium md:text-lg text-zinc-700 text-center mt-4 md:w-1/2 mx-auto px-3"
+    initial={{ opacity: 0, y: 20 }} 
+    animate={{ opacity: 1, y: 0 }} 
+    transition={{ duration: 1, delay: 0.3 }} // Added delay to stagger the animations
+  >
+    I've crafted everything from minimalist websites to dynamic web apps, combining clean design with robust functionality and innovation.
+  </motion.h2>
+</div>
+<div className="mt-8">
+  <Projects/>
+</div>
+
+<div className="mt-8">
+  <Footer/>
+</div>
 
     </div>
   );

@@ -8,3 +8,30 @@
 body{
     font-family: "Space Mono", serif;
 }
+
+.marquee-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .marquee-container::before,
+  .marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40%; /* Adjust as needed for gradient size */
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+  .marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, black, transparent);
+  }
+  
+  .marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, black, transparent);
+  }
+  
