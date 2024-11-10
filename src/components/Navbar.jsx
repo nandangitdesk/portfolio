@@ -54,7 +54,7 @@ const Navbar = () => {
           <motion.button
             onClick={() =>
               window.open(
-                'https://drive.google.com/file/d/1Z_UtzdZagl8AtwOty7frnqjARYO7fBWS/view?usp=sharing',
+                'https://drive.google.com/file/d/1PjgoIxf2FwRFqfHrGqR5Dw6VCEOOUSSp/view?usp=sharing',
                 '_blank'
               )
             }
