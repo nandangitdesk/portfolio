@@ -1,17 +1,17 @@
 import { motion } from 'framer-motion';
 import { AiFillGithub } from 'react-icons/ai';
 import projectimg2 from '../assets/project2.png';
-import projectimg1 from '../assets/project1.png';
+import projectimg1 from '../assets/projectnew.png';
 import { BsArrowRight } from 'react-icons/bs';
 import ShuffleText from './ShuffleText';
 
 export default function Component() {
   const projects = [
     {
-      title: "Kolhapuri Kitchen Ecommerce Platform",
+      title: "Bookland Online Bookstore",
       Role: "Full Stack Developer",
       description:
-        "Kolhapuri Kitchen Masale is an e-commerce platform offering authentic homemade Kolhapuri spices and flours. It features user authentication, product search, filtering, secure payments, product reviews, and fast checkout for a seamless shopping experience.",
+        "Bookland is an e-commerce platform designed for book lovers, offering a vast collection of books across various genres. It features user authentication, book search, filtering, secure payments, customer reviews, and a fast checkout process for a seamless shopping experience.",
       tech: [
         "React.js",
         "JWT",
@@ -26,8 +26,8 @@ export default function Component() {
       ],
       image: projectimg1,
       links: {
-        website: "https://kolhapurikitchen.onrender.com/",
-        source: "https://github.com/nandangitdesk/KolhapuriKitchenEcommerce",
+        website: "https://bookland-2tkd.onrender.com/",
+        source: "https://github.com/nandangitdesk/bookland",
       },
     },
     {
